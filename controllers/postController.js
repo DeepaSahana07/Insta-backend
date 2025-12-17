@@ -46,8 +46,8 @@ export const getFeedPosts = async (req, res) => {
     .populate('user', 'username profilePicture fullName')
     .populate('likes', 'username profilePicture')
     .populate('comments.user', 'username profilePicture')
-    .sort({ createdAt: -1 })
-    .limit(20);
+    .sort({ createdAt: -1 }) // This ensures newest posts first
+    .limit(50);
 
     res.json({ success: true, posts });
   } catch (error) {
