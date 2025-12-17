@@ -48,7 +48,7 @@ app.use((req, res, next) => {
 app.options('*', cors());
 
 // Routes
-app.use('/api/user-auth', authRoutes);
+app.use('/api/auth', authRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/posts', postRoutes);
 
